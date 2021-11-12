@@ -1,0 +1,1382 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/login:
+    get:
+      summary: 'Show the application''s login form.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        400:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    message: 'Undefined variable $errors (View: D:\Ghrix-Laravel\empv2adminapi\resources\views\auth\login.blade.php)'
+                    status_code: 400
+                properties:
+                  data:
+                    type: object
+                    example:
+                      message: 'Undefined variable $errors (View: D:\Ghrix-Laravel\empv2adminapi\resources\views\auth\login.blade.php)'
+                      status_code: 400
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: 'Handle a login request to the application.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/logout:
+    post:
+      summary: 'Log the user out of the application.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/register:
+    get:
+      summary: 'Show the application registration form.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        400:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    message: 'Undefined variable $errors (View: D:\Ghrix-Laravel\empv2adminapi\resources\views\auth\register.blade.php)'
+                    status_code: 400
+                properties:
+                  data:
+                    type: object
+                    example:
+                      message: 'Undefined variable $errors (View: D:\Ghrix-Laravel\empv2adminapi\resources\views\auth\register.blade.php)'
+                      status_code: 400
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: 'Handle a registration request for the application.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/password/reset:
+    get:
+      summary: 'Display the form to request a password reset link.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        400:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    message: 'Undefined variable $errors (View: D:\Ghrix-Laravel\empv2adminapi\resources\views\auth\passwords\email.blade.php)'
+                    status_code: 400
+                properties:
+                  data:
+                    type: object
+                    example:
+                      message: 'Undefined variable $errors (View: D:\Ghrix-Laravel\empv2adminapi\resources\views\auth\passwords\email.blade.php)'
+                      status_code: 400
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: 'Reset the given user''s password.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/password/email:
+    post:
+      summary: 'Send a reset link to the given user.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  '/api/password/reset/{token}':
+    get:
+      summary: 'Display the password reset view for the given token.'
+      description: 'If no token is present, display the link request form.'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        400:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    message: 'Undefined variable $errors (View: D:\Ghrix-Laravel\empv2adminapi\resources\views\auth\passwords\reset.blade.php)'
+                    status_code: 400
+                properties:
+                  data:
+                    type: object
+                    example:
+                      message: 'Undefined variable $errors (View: D:\Ghrix-Laravel\empv2adminapi\resources\views\auth\passwords\reset.blade.php)'
+                      status_code: 400
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: token
+        description: ''
+        example: sed
+        required: true
+        schema:
+          type: string
+  /api/password/confirm:
+    get:
+      summary: 'Display the password confirmation view.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        400:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    message: Unauthenticated.
+                    status_code: 400
+                properties:
+                  data:
+                    type: object
+                    example:
+                      message: Unauthenticated.
+                      status_code: 400
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: 'Confirm the given user''s password.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/email/verify:
+    get:
+      summary: 'Show the email verification notice.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        400:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    message: Unauthenticated.
+                    status_code: 400
+                properties:
+                  data:
+                    type: object
+                    example:
+                      message: Unauthenticated.
+                      status_code: 400
+      tags:
+        - Endpoints
+      security: []
+  '/api/email/verify/{id}/{hash}':
+    get:
+      summary: 'Mark the authenticated user''s email address as verified.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        400:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    message: Unauthenticated.
+                    status_code: 400
+                properties:
+                  data:
+                    type: object
+                    example:
+                      message: Unauthenticated.
+                      status_code: 400
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the verify.'
+        example: tempora
+        required: true
+        schema:
+          type: string
+      -
+        in: path
+        name: hash
+        description: ''
+        example: et
+        required: true
+        schema:
+          type: string
+  /api/email/resend:
+    post:
+      summary: 'Resend the email verification notification.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/auth/login:
+    post:
+      summary: 'Get a JWT via given credentials.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address. The value format is invalid. Must not be greater than 255 characters.'
+                  example: oyolxfmwpmlueiddrsfcyssqmusemgymnfwtzdufqipsdzues
+                password:
+                  type: string
+                  description: '''password'' => ''required|string|min:8|max:50|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/'',. Must not be greater than 25 characters.'
+                  example: rcluvldpnmameso
+              required:
+                - email
+                - password
+      security: []
+  /api/v1/auth/register:
+    post:
+      summary: 'Register a User.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: '''name'' => ''required|string|between:2,255|regex:/^[a-zA-Z ]+$/'',. Must be a valid email address. The value format is invalid. Must not be greater than 255 characters.'
+                  example: lstqqrxqolkrajogru
+                password:
+                  type: string
+                  description: '''password'' => ''required|string|confirmed|min:8|max:50|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/'',. Must not be greater than 25 characters.'
+                  example: swpjgbkfqwtubypssao
+              required:
+                - email
+                - password
+      security: []
+  /api/v1/auth/logout:
+    post:
+      summary: 'Log the user out (Invalidate the token).'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/auth/refresh:
+    post:
+      summary: 'Refresh a token.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/auth/user-profile:
+    get:
+      summary: 'Get the authenticated User.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        400:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    message: Unauthenticated.
+                    status_code: 400
+                properties:
+                  data:
+                    type: object
+                    example:
+                      message: Unauthenticated.
+                      status_code: 400
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/auth/forgotPassword:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: '''email'' => ''required|email'',. Must be a valid email address. The value format is invalid. Must not be greater than 255 characters.'
+                  example: yoxgzjpisxntwajczpgoyjblagahliydfunordcsczriuidkfwruszpvzkchluhlpwkahqufpwundpvbktooodelmfgwyfshuxknoegehthjbxseoejorbspbcampujfmnbbfjxefzjlqcozhjthcckwqokgi
+              required:
+                - email
+      security: []
+  /api/v1/auth/resetPassword:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                token:
+                  type: string
+                  description: ''
+                  example: sit
+                email:
+                  type: string
+                  description: 'Must be a valid email address. The value format is invalid. Must not be greater than 255 characters.'
+                  example: sphlabcprvmlacjyqpehkwskgpgchiotjxqoyohlahbzpvwqxcvtkykdbkcutmxwcuiogfhvsitjsnwllejwulyxjzzeoobaixvxcpgqhkmnowmjrogjnavfbaajuczjpctkjjsxgsqshrnpbyx
+                password:
+                  type: string
+                  description: '''password'' => [''required'', ''confirmed'', RulesPassword::defaults()],. The value format is invalid. Must be at least 8 characters. Must not be greater than 25 characters.'
+                  example: eieikuprbgokrtvsjnha
+              required:
+                - token
+                - email
+                - password
+      security: []
+  /api/v1/auth/permissions:
+    get:
+      summary: 'Display a listing of the permission.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        400:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    message: 'User is not logged in.'
+                    status_code: 400
+                properties:
+                  data:
+                    type: object
+                    example:
+                      message: 'User is not logged in.'
+                      status_code: 400
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/auth/permissions/create:
+    post:
+      summary: 'Store a newly created permission in database.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'The value format is invalid. Must be between 2 and 255 characters.'
+                  example: qynvfnzubcxbdaarivgejnkhqfnqnvlacuqmaaaetukkqmiaokkkexaulkmefqbuuarlbfqoazjpvtcawlskb
+              required:
+                - name
+      security: []
+  '/api/v1/auth/permissions/show/{id}':
+    get:
+      summary: 'Display the specified permission.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        400:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: false
+                  message: 'Data not found'
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: 'Data not found'
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the show.'
+        example: veniam
+        required: true
+        schema:
+          type: string
+  '/api/v1/auth/permissions/edit/{id}':
+    post:
+      summary: 'Update the specified permission in database.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'The value format is invalid. Must be between 2 and 255 characters.'
+                  example: voupqndrivbrlxzhwgwfdpmrdkllnbiigkrrlxobobwuicyzeazczzbcplwaikclmroujtznmmvsrxwbqpizubgtewppznitrvembqnjbumjsqunyicbxabtknibprnietjlpotrsvbngmimfidwetmhzmjcgnokhesavpsiudlrjzeqs
+              required:
+                - name
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the edit.'
+        example: et
+        required: true
+        schema:
+          type: string
+  '/api/v1/auth/permissions/delete/{id}':
+    post:
+      summary: 'Remove the specified permission from database.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the delete.'
+        example: fugiat
+        required: true
+        schema:
+          type: string
+  /api/v1/auth/roles:
+    get:
+      summary: 'Display a listing of the role.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        400:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    message: 'User is not logged in.'
+                    status_code: 400
+                properties:
+                  data:
+                    type: object
+                    example:
+                      message: 'User is not logged in.'
+                      status_code: 400
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/auth/roles/create:
+    post:
+      summary: 'Store a newly created role in database.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'The value format is invalid. Must be between 2 and 255 characters.'
+                  example: uhscpnibnvtkmcxdkcbtqitiqmmbmrjseohcpaugfdmylyujhqpjhazdlziayaesgerwdefbufepmtjqyyckaihgdizhwcrwqaijpvpairndpsqyeijmkdokauf
+                permission:
+                  type: array
+                  description: 'Must be between 1 and 50.'
+                  example:
+                    - 47
+                  items:
+                    type: integer
+              required:
+                - name
+      security: []
+  '/api/v1/auth/roles/show/{id}':
+    post:
+      summary: 'Display the specified role.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the show.'
+        example: aut
+        required: true
+        schema:
+          type: string
+  '/api/v1/auth/roles/edit/{id}':
+    post:
+      summary: 'Update the specified role in database.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'The value format is invalid. Must be between 2 and 255 characters.'
+                  example: kjhufkhtralbgztsslnlhpjzuivtathlgewrdwblsdmsgnzcocvawwmvoamerzhvmpzxxxlggjgguawqlyfieeolsxyimpuhorwgaldykhuheziyuigflcmweftsqivayclggkfxzijgnlzcqdtesuobtyhyxbrswncpqhtlswwujonvyexsomlhzllqtmwyhphwbusdliixzevchhoibqejwtdxu
+                permission:
+                  type: array
+                  description: 'Must be between 1 and 50.'
+                  example:
+                    - 13
+                  items:
+                    type: integer
+              required:
+                - name
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the edit.'
+        example: similique
+        required: true
+        schema:
+          type: string
+  '/api/v1/auth/roles/delete/{id}':
+    post:
+      summary: 'Remove the specified role from database.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the delete.'
+        example: aut
+        required: true
+        schema:
+          type: string
+  /api/v1/auth/users:
+    get:
+      summary: 'Display a listing of the users.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        400:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    message: 'User is not logged in.'
+                    status_code: 400
+                properties:
+                  data:
+                    type: object
+                    example:
+                      message: 'User is not logged in.'
+                      status_code: 400
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/auth/users/create:
+    post:
+      summary: 'Store a newly created user in database.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: '''name'' => ''required|string|between:2,255|regex:/^[a-zA-Z ]+$/'',. Must be a valid email address. The value format is invalid. Must not be greater than 255 characters.'
+                  example: cixvtludqqojilbccanoeuxydcqmhzpuraxzhiyrdlocrzmnlsihxbndwcamgytgqnwhtqctiehfybxsdhfikdqdamyzlbxpamdzfmiplendmofgelpmefokmokjcjeljgfkvpyjtxctf
+                password:
+                  type: string
+                  description: '''password'' => ''required|string|confirmed|min:8|max:50|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/'',. Must not be greater than 25 characters.'
+                  example: emunnyxsqkozdkvltcwwj
+                roles:
+                  type: integer
+                  description: 'Must be between 1 and 50.'
+                  example: 29
+              required:
+                - email
+                - password
+                - roles
+      security: []
+  '/api/v1/auth/users/show/{id}':
+    post:
+      summary: 'Display the specified user.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the show.'
+        example: doloribus
+        required: true
+        schema:
+          type: string
+  '/api/v1/auth/users/edit/{id}':
+    post:
+      summary: 'Update the specified user in database.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: '''name'' => ''required|string|between:2,255|regex:/^[a-zA-Z ]+$/'',. Must be a valid email address. The value format is invalid. Must not be greater than 255 characters.'
+                  example: cogzvggcwurwpyqbawiuttqqxygjrxgnvgmuevulhcavrwfwcpgxwbesjoqmlqtqj
+                password:
+                  type: string
+                  description: '''password'' => ''required|string|confirmed|min:8|max:50|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/'',. Must not be greater than 25 characters.'
+                  example: cfmmd
+                roles:
+                  type: integer
+                  description: 'Must be between 1 and 50.'
+                  example: 23
+              required:
+                - email
+                - password
+                - roles
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the edit.'
+        example: unde
+        required: true
+        schema:
+          type: string
+  '/api/v1/auth/users/delete/{id}':
+    post:
+      summary: 'Remove the specified user from database.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the delete.'
+        example: ut
+        required: true
+        schema:
+          type: string
+  /api/v1/auth/approve:
+    get:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        400:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    message: Unauthenticated.
+                    status_code: 400
+                properties:
+                  data:
+                    type: object
+                    example:
+                      message: Unauthenticated.
+                      status_code: 400
+      tags:
+        - Endpoints
+      security: []
+  /api/sendEmail:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+tags:
+  -
+    name: Endpoints
+    description: ''

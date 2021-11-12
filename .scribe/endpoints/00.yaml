@@ -1,0 +1,925 @@
+name: Endpoints
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/login
+    metadata:
+      title: 'Show the application''s login form.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 400
+        content: '{"data":{"message":"Undefined variable $errors (View: D:\\Ghrix-Laravel\\empv2adminapi\\resources\\views\\auth\\login.blade.php)","status_code":400}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '59'
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/login
+    metadata:
+      title: 'Handle a login request to the application.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/logout
+    metadata:
+      title: 'Log the user out of the application.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: api/register
+    metadata:
+      title: 'Show the application registration form.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 400
+        content: '{"data":{"message":"Undefined variable $errors (View: D:\\Ghrix-Laravel\\empv2adminapi\\resources\\views\\auth\\register.blade.php)","status_code":400}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '58'
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/register
+    metadata:
+      title: 'Handle a registration request for the application.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: api/password/reset
+    metadata:
+      title: 'Display the form to request a password reset link.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 400
+        content: '{"data":{"message":"Undefined variable $errors (View: D:\\Ghrix-Laravel\\empv2adminapi\\resources\\views\\auth\\passwords\\email.blade.php)","status_code":400}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '57'
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/password/email
+    metadata:
+      title: 'Send a reset link to the given user.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/password/reset/{token}'
+    metadata:
+      title: 'Display the password reset view for the given token.'
+      description: 'If no token is present, display the link request form.'
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      token:
+        name: token
+        description: ''
+        required: true
+        example: sed
+        type: string
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 400
+        content: '{"data":{"message":"Undefined variable $errors (View: D:\\Ghrix-Laravel\\empv2adminapi\\resources\\views\\auth\\passwords\\reset.blade.php)","status_code":400}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '56'
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/password/reset
+    metadata:
+      title: 'Reset the given user''s password.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: api/password/confirm
+    metadata:
+      title: 'Display the password confirmation view.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 400
+        content: '{"data":{"message":"Unauthenticated.","status_code":400}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/password/confirm
+    metadata:
+      title: 'Confirm the given user''s password.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: api/email/verify
+    metadata:
+      title: 'Show the email verification notice.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 400
+        content: '{"data":{"message":"Unauthenticated.","status_code":400}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/email/verify/{id}/{hash}'
+    metadata:
+      title: 'Mark the authenticated user''s email address as verified.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the verify.'
+        required: true
+        example: tempora
+        type: string
+      hash:
+        name: hash
+        description: ''
+        required: true
+        example: et
+        type: string
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 400
+        content: '{"data":{"message":"Unauthenticated.","status_code":400}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/email/resend
+    metadata:
+      title: 'Resend the email verification notification.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/auth/login
+    metadata:
+      title: 'Get a JWT via given credentials.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: 'Must be a valid email address. The value format is invalid. Must not be greater than 255 characters.'
+        required: true
+        example: oyolxfmwpmlueiddrsfcyssqmusemgymnfwtzdufqipsdzues
+        type: string
+      password:
+        name: password
+        description: '''password'' => ''required|string|min:8|max:50|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/'',. Must not be greater than 25 characters.'
+        required: true
+        example: rcluvldpnmameso
+        type: string
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/auth/register
+    metadata:
+      title: 'Register a User.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: '''name'' => ''required|string|between:2,255|regex:/^[a-zA-Z ]+$/'',. Must be a valid email address. The value format is invalid. Must not be greater than 255 characters.'
+        required: true
+        example: lstqqrxqolkrajogru
+        type: string
+      password:
+        name: password
+        description: '''password'' => ''required|string|confirmed|min:8|max:50|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/'',. Must not be greater than 25 characters.'
+        required: true
+        example: swpjgbkfqwtubypssao
+        type: string
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/auth/logout
+    metadata:
+      title: 'Log the user out (Invalidate the token).'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/auth/refresh
+    metadata:
+      title: 'Refresh a token.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/auth/user-profile
+    metadata:
+      title: 'Get the authenticated User.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 400
+        content: '{"data":{"message":"Unauthenticated.","status_code":400}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/auth/forgotPassword
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: '''email'' => ''required|email'',. Must be a valid email address. The value format is invalid. Must not be greater than 255 characters.'
+        required: true
+        example: yoxgzjpisxntwajczpgoyjblagahliydfunordcsczriuidkfwruszpvzkchluhlpwkahqufpwundpvbktooodelmfgwyfshuxknoegehthjbxseoejorbspbcampujfmnbbfjxefzjlqcozhjthcckwqokgi
+        type: string
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/auth/resetPassword
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      token:
+        name: token
+        description: ''
+        required: true
+        example: sit
+        type: string
+      email:
+        name: email
+        description: 'Must be a valid email address. The value format is invalid. Must not be greater than 255 characters.'
+        required: true
+        example: sphlabcprvmlacjyqpehkwskgpgchiotjxqoyohlahbzpvwqxcvtkykdbkcutmxwcuiogfhvsitjsnwllejwulyxjzzeoobaixvxcpgqhkmnowmjrogjnavfbaajuczjpctkjjsxgsqshrnpbyx
+        type: string
+      password:
+        name: password
+        description: '''password'' => [''required'', ''confirmed'', RulesPassword::defaults()],. The value format is invalid. Must be at least 8 characters. Must not be greater than 25 characters.'
+        required: true
+        example: eieikuprbgokrtvsjnha
+        type: string
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/auth/permissions
+    metadata:
+      title: 'Display a listing of the permission.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 400
+        content: '{"data":{"message":"User is not logged in.","status_code":400}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '55'
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/auth/permissions/create
+    metadata:
+      title: 'Store a newly created permission in database.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'The value format is invalid. Must be between 2 and 255 characters.'
+        required: true
+        example: qynvfnzubcxbdaarivgejnkhqfnqnvlacuqmaaaetukkqmiaokkkexaulkmefqbuuarlbfqoazjpvtcawlskb
+        type: string
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/auth/permissions/show/{id}'
+    metadata:
+      title: 'Display the specified permission.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the show.'
+        required: true
+        example: veniam
+        type: string
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 400
+        content: '{"success":false,"message":"Data not found"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '54'
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/auth/permissions/edit/{id}'
+    metadata:
+      title: 'Update the specified permission in database.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the edit.'
+        required: true
+        example: et
+        type: string
+    queryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'The value format is invalid. Must be between 2 and 255 characters.'
+        required: true
+        example: voupqndrivbrlxzhwgwfdpmrdkllnbiigkrrlxobobwuicyzeazczzbcplwaikclmroujtznmmvsrxwbqpizubgtewppznitrvembqnjbumjsqunyicbxabtknibprnietjlpotrsvbngmimfidwetmhzmjcgnokhesavpsiudlrjzeqs
+        type: string
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/auth/permissions/delete/{id}'
+    metadata:
+      title: 'Remove the specified permission from database.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the delete.'
+        required: true
+        example: fugiat
+        type: string
+    queryParameters: []
+    bodyParameters: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/auth/roles
+    metadata:
+      title: 'Display a listing of the role.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 400
+        content: '{"data":{"message":"User is not logged in.","status_code":400}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '53'
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/auth/roles/create
+    metadata:
+      title: 'Store a newly created role in database.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'The value format is invalid. Must be between 2 and 255 characters.'
+        required: true
+        example: uhscpnibnvtkmcxdkcbtqitiqmmbmrjseohcpaugfdmylyujhqpjhazdlziayaesgerwdefbufepmtjqyyckaihgdizhwcrwqaijpvpairndpsqyeijmkdokauf
+        type: string
+      permission:
+        name: permission
+        description: 'Must be between 1 and 50.'
+        required: false
+        example:
+          - 47
+        type: 'integer[]'
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/auth/roles/show/{id}'
+    metadata:
+      title: 'Display the specified role.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the show.'
+        required: true
+        example: aut
+        type: string
+    queryParameters: []
+    bodyParameters: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/auth/roles/edit/{id}'
+    metadata:
+      title: 'Update the specified role in database.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the edit.'
+        required: true
+        example: similique
+        type: string
+    queryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'The value format is invalid. Must be between 2 and 255 characters.'
+        required: true
+        example: kjhufkhtralbgztsslnlhpjzuivtathlgewrdwblsdmsgnzcocvawwmvoamerzhvmpzxxxlggjgguawqlyfieeolsxyimpuhorwgaldykhuheziyuigflcmweftsqivayclggkfxzijgnlzcqdtesuobtyhyxbrswncpqhtlswwujonvyexsomlhzllqtmwyhphwbusdliixzevchhoibqejwtdxu
+        type: string
+      permission:
+        name: permission
+        description: 'Must be between 1 and 50.'
+        required: false
+        example:
+          - 13
+        type: 'integer[]'
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/auth/roles/delete/{id}'
+    metadata:
+      title: 'Remove the specified role from database.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the delete.'
+        required: true
+        example: aut
+        type: string
+    queryParameters: []
+    bodyParameters: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/auth/users
+    metadata:
+      title: 'Display a listing of the users.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 400
+        content: '{"data":{"message":"User is not logged in.","status_code":400}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '52'
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/auth/users/create
+    metadata:
+      title: 'Store a newly created user in database.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: '''name'' => ''required|string|between:2,255|regex:/^[a-zA-Z ]+$/'',. Must be a valid email address. The value format is invalid. Must not be greater than 255 characters.'
+        required: true
+        example: cixvtludqqojilbccanoeuxydcqmhzpuraxzhiyrdlocrzmnlsihxbndwcamgytgqnwhtqctiehfybxsdhfikdqdamyzlbxpamdzfmiplendmofgelpmefokmokjcjeljgfkvpyjtxctf
+        type: string
+      password:
+        name: password
+        description: '''password'' => ''required|string|confirmed|min:8|max:50|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/'',. Must not be greater than 25 characters.'
+        required: true
+        example: emunnyxsqkozdkvltcwwj
+        type: string
+      roles:
+        name: roles
+        description: 'Must be between 1 and 50.'
+        required: true
+        example: 29
+        type: integer
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/auth/users/show/{id}'
+    metadata:
+      title: 'Display the specified user.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the show.'
+        required: true
+        example: doloribus
+        type: string
+    queryParameters: []
+    bodyParameters: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/auth/users/edit/{id}'
+    metadata:
+      title: 'Update the specified user in database.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the edit.'
+        required: true
+        example: unde
+        type: string
+    queryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: '''name'' => ''required|string|between:2,255|regex:/^[a-zA-Z ]+$/'',. Must be a valid email address. The value format is invalid. Must not be greater than 255 characters.'
+        required: true
+        example: cogzvggcwurwpyqbawiuttqqxygjrxgnvgmuevulhcavrwfwcpgxwbesjoqmlqtqj
+        type: string
+      password:
+        name: password
+        description: '''password'' => ''required|string|confirmed|min:8|max:50|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/'',. Must not be greater than 25 characters.'
+        required: true
+        example: cfmmd
+        type: string
+      roles:
+        name: roles
+        description: 'Must be between 1 and 50.'
+        required: true
+        example: 23
+        type: integer
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/auth/users/delete/{id}'
+    metadata:
+      title: 'Remove the specified user from database.'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the delete.'
+        required: true
+        example: ut
+        type: string
+    queryParameters: []
+    bodyParameters: []
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/auth/approve
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 400
+        content: '{"data":{"message":"Unauthenticated.","status_code":400}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/sendEmail
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses: []
+    responseFields: []
